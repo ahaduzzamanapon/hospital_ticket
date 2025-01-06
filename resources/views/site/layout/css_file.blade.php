@@ -2,26 +2,25 @@
 
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/bootstrap.min.css') }}">
 <!-- Nice Select CSS -->
-<link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/nice-select.css') }}">
 <!-- Font Awesome CSS -->
-<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/font-awesome.min.css') }}">
 <!-- icofont CSS -->
-<link rel="stylesheet" href="{{ asset('css/icofont.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/icofont.css') }}">
 <!-- Slicknav -->
-<link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/slicknav.min.css') }}">
 <!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="{{ asset('css/owl-carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/owl-carousel.css') }}">
 <!-- Datepicker CSS -->
-<link rel="stylesheet" href="{{ asset('css/datepicker.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/datepicker.css') }}">
 <!-- Animate CSS -->
-<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/animate.min.css') }}">
 <!-- Magnific Popup CSS -->
-<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/frontend/magnific-popup.css') }}">
 <!-- Medipro CSS -->
-<link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/normalize.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/responsive.css') }}">
 
