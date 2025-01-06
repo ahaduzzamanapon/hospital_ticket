@@ -19,7 +19,7 @@
     <!-- ScrollUp JS -->
     <script src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
     <!-- Niceselect JS -->
-    <script src="{{ asset('js/niceselect.js') }}"></script>
+    {{-- <script src="{{ asset('js/niceselect.js') }}"></script> --}}
     <!-- Tilt Jquery JS -->
     <script src="{{ asset('js/tilt.jquery.min.js') }}"></script>
     <!-- Owl Carousel JS -->
@@ -38,4 +38,14 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function alert(text){
+            Swal.fire({
+                text: text,
+            });
+        }
+    </script>
+
 

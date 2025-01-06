@@ -4,7 +4,7 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="{{ asset('css/frontend/bootstrap.min.css') }}">
 <!-- Nice Select CSS -->
-<link rel="stylesheet" href="{{ asset('css/frontend/nice-select.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('css/frontend/nice-select.css') }}"> --}}
 <!-- Font Awesome CSS -->
 <link rel="stylesheet" href="{{ asset('css/frontend/font-awesome.min.css') }}">
 <!-- icofont CSS -->

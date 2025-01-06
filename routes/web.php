@@ -22,7 +22,12 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/book_ticket', 'BookTicket@index')->name('book_ticket');
+Route::post('/sendOtp', 'BookTicket@sendOtp')->name('sendOtp');
+Route::get('/resend', 'BookTicket@resend')->name('resend');
+Route::post('/verifyOtp', 'BookTicket@verifyOtp')->name('verifyOtp');
+Route::get('/book_ticket_patient', 'BookTicket@book_ticket_patient')->name('book_ticket_patient');
 
+Route::post('/patientRegistration', 'BookTicket@patientRegistration')->name('patientRegistration');
 /**
  * Admin routes
  */
