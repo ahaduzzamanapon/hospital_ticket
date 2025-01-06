@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/book_ticket', 'BookTicket@index')->name('book_ticket');
 
 /**
  * Admin routes

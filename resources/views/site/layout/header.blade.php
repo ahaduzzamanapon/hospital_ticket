@@ -53,11 +53,11 @@
                                         </li>
                                         <li><a href="#">Doctos </a></li>
                                         <li><a href="#">Services </a></li>
-                                        <li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
+                                        {{-- <li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 <li><a href="404.html">404 Error</a></li>
                                             </ul>
-                                        </li>
+                                        </li> --}}
                                         <li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
                                             <ul class="dropdown">
                                                 <li><a href="blog-single.html">Blog Details</a></li>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
-                                <a href="appointment.html" class="btn">Book Appointment</a>
+                                @include('site\component\book_ticket')
                             </div>
                         </div>
                     </div>
