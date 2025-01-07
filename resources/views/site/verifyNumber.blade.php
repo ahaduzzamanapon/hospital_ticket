@@ -123,7 +123,7 @@
                        console.log(response);
                         if (response.otpVerified) {
                             if (response.register) {
-                                window.location = '{{ route('book_ticket_patient') }}';
+                                window.location = '{{ route('patient_dashboard') }}';
                             } else {
                                 $('#patientRegistrationModal').modal('show');
                                 $('.loader_verify').addClass('d-none');

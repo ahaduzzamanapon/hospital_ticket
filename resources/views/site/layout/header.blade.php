@@ -34,7 +34,7 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="img/logo.png" alt="#"></a>
+                                <a href="{{route('/')}}"><img src="img/logo.png" alt="#"></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->
@@ -71,7 +71,14 @@
                         </div>
                         <div class="col-lg-2 col-12">
                             <div class="get-quote">
+                                @if(session()->has('Patient'))
+                                <div class="d-flex" style="gap: 10px">
+                                    <a href="{{ route('patient_dashboard') }}" class="btn btn-primary btn-xm mb-2">Dashboard <i class="fa fa-user"></i></a>
+                                    <a href="{{ route('patient_logout') }}" class="btn btn-danger btn-xm mb-2">Logout <i class="fa fa-sign-out"></i></a>
+                                </div>
+                                @else
                                 @include('site\component\book_ticket')
+                                @endif
                             </div>
                         </div>
                     </div>

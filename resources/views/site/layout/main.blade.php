@@ -18,6 +18,7 @@
   <body>
     @include('site.layout.header')
     @include('site.layout.modal.patientRegistration_modal')
+    @include('site.layout.modal.book_a_ticket_modal')
     	<!-- Preloader -->
         <div class="preloader">
             <div class="loader">
@@ -33,10 +34,7 @@
             </div>
         </div>
         <!-- End Preloader -->
-
-
     @yield('content')
-
     @include('site.layout.footer')
     @include('site.layout.js_file')
     @yield('scripts')
@@ -76,7 +74,7 @@
                     success: function(response) {
                         if(response=='success'){
                             $('#patientRegistrationModal').modal('hide');
-                            window.location = '{{ route('book_ticket_patient') }}';
+                            window.location = '{{ route('patient_dashboard') }}';
                         }else{
                             alert('Something went wrong');
                         }
@@ -87,6 +85,41 @@
                 });
             })
         })
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#department_id_for_book_a_ticket').on('change', function() {
+                var departmentId = $(this).val();
+                if (departmentId) {
+                    $.ajax({
+                        url: "{{ route('get_time_slot_by_department') }}",
+                        type: "POST",
+                        data: {
+                            department_id: departmentId,
+                            _token: $('meta[name="csrf-token"]').attr('content')
+                        },
+                        dataType: "json",
+                        success: function(response) {
+                            var timeSlotSelect = $('#time_slot_id_for_book_a_ticket');
+                            timeSlotSelect.empty();
+                            timeSlotSelect.append('<option value="">Select Time Slot</option>');
+                            $.each(response, function(key, value) {
+                                timeSlotSelect.append('<option value="' + value.id + '">' + value.time_slot + '</option>');
+                            });
+                        },
+                        error: function() {
+                            alert('Error retrieving time slots.'); // Consider handling errors more gracefully
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        function getTicketPrint(ticket_id) {
+            window.open('{{ route('ticket_print', ['ticket_id' => ':ticket_id']) }}'.replace(':ticket_id', ticket_id), '_blank');
+        }
     </script>
   </body>
 </html>
