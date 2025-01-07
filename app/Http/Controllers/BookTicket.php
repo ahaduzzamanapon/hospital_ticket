@@ -332,19 +332,19 @@ class BookTicket extends Controller
 
         // $patient = Patient::where('patient_id', $ticket->patient_id)->first();
         // session(['Patient' => $patient]);
-
-
-
       return redirect(route('reaction_on_sassoon',['ticket_id' => $ticket->ticket_id]));
     }
-
-
     public function reaction_on_sassoon($ticket_id){
         $Ticket = Ticket::where('ticket_id', $ticket_id)->first();
-        $Patient = Patient::where('id', $Ticket->patient_id)->first();
-        session(['Patient' => $Patient]);
-        session(['ticket_id_for_print' => $ticket_id]);
-        return redirect()->route('patient_dashboard');
+        if (!empty($Ticket)) {
+            $Patient = Patient::where('id', $Ticket->patient_id)->first();
+            session(['Patient' => $Patient]);
+            session(['ticket_id_for_print' => $ticket_id]);
+            return redirect()->route('patient_dashboard');
+        }else{
+            session()->flash('error', 'Something went wrong. Please try again.');
+            return redirect('/book_ticket');
+        }
     }
 
     public function patientHistory (){
