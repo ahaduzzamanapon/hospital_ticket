@@ -2445,7 +2445,7 @@ fieldset[disabled] a.btn {
 
 .btn-primary.focus,
 .btn-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5)
+    box-shadow: 0 0 0 .2rem rgb(0 135 86)
 }
 
 .btn-primary.disabled,
@@ -2460,7 +2460,7 @@ fieldset[disabled] a.btn {
     color: #fff;
     background-color: #0062cc;
     border-color: #005cbf;
-    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5)
+    box-shadow: 0 0 0 .2rem rgb(0 135 86)
 }
 
 .btn-secondary {
@@ -2702,7 +2702,7 @@ fieldset[disabled] a.btn {
 
 .btn-outline-primary.focus,
 .btn-outline-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5)
+    box-shadow: 0 0 0 .2rem rgb(0 135 86)
 }
 
 .btn-outline-primary.disabled,
@@ -2717,7 +2717,7 @@ fieldset[disabled] a.btn {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
-    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5)
+    box-shadow: 0 0 0 .2rem rgb(0 135 86)
 }
 
 .btn-outline-secondary {
