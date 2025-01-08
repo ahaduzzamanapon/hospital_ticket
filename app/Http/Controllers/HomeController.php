@@ -32,9 +32,9 @@ class HomeController extends Controller
     public function index()
     {
 
-        // session()->forget('otp');
-        // session()->forget('number');
-        // session()->forget('Patient');
+        session()->forget('otp');
+        session()->forget('number');
+        session()->forget('Patient');
 
         return view('site.home');
     }

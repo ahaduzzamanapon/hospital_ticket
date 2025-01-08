@@ -27,7 +27,7 @@
                                         +88
                                     </div>
                                     <input type="number" class="number-input-form form-control" id="number-input-for-otp"
-                                        value="01737155233" placeholder="XXXXXXXXX" pattern=".{11,}" title="At least 11 numbers">
+                                        value="" placeholder="XXXXXXXXX" pattern=".{11,}" title="At least 11 numbers">
                                     <style>
                                         .number-input-form:invalid {
                                             border: 1px solid red;
