@@ -75,11 +75,9 @@
                         <p> <strong> Contact: </strong>01732720684</p>
                     </div>
                 </div>
-
                 <p><strong>Visit Date: </strong>06 Nov 2024 from 08:00 AM to 10:00 AM</p>
             </div>
             <div class="col-3 ">
-
                 <p>
                     <strong>Health ID:</strong>
                 <div class="barcode">
@@ -97,12 +95,10 @@
             </div>
             <div class="col-9 p-4">
                 <div class="rx-symbol">Rx</div>
-
             </div>
         </div>
         <footer>
             <div class="footer-section">
-
                 <div class="text-end">
                     <p>Signature & Seal</p>
                     <p>Name: __________________</p>
