@@ -17,4 +17,17 @@ class Department extends Model
         'room_number',
         'total_slot'
     ];
+
+    public $timestamps = true;
+
+    public function timeSlots()
+    {
+        return $this->hasMany(TimeSlot::class);
+    }
+
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+    
+
 }

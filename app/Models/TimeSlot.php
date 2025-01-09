@@ -13,4 +13,17 @@ class TimeSlot extends Model
         'department_id',
         'total_ticket'
     ];
+
+    public $timestamps = true;
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
+
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+    
+
 }

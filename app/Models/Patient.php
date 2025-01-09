@@ -19,4 +19,10 @@ class Patient extends Model
         'address',
         'blood_group',
     ];
+
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+    
+
 }

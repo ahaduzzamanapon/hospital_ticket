@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Department;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Backend\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,4 +75,27 @@ Route::group(['prefix' => 'admin'], function () {
     // Forget Password Routes
     Route::get('/password/reset', 'Backend\Auth\ForgetPasswordController@showLinkRequestForm')->name('admin.password.request');
     Route::post('/password/reset/submit', 'Backend\Auth\ForgetPasswordController@reset')->name('admin.password.update');
+
+    Route::group(['middleware' => 'auth:admin'], function () {
+
+        // Route For Departments
+       Route::get('/departments',[DepartmentController::class,'index'])->name('admin.departments.index'); 
+       Route::get('/departments/create',[DepartmentController::class,'create'])->name('admin.departments.create'); 
+       Route::post('/departments/store',[DepartmentController::class,'store'])->name('admin.departments.store'); 
+       Route::get('/departments/show/{id}',[DepartmentController::class,'show'])->name('admin.departments.show');
+       Route::get('/departments/edit/{id}',[DepartmentController::class,'edit'])->name('admin.departments.edit');
+       Route::put('/departments/update/{id}',[DepartmentController::class,'update'])->name('admin.departments.update');
+       Route::delete('/departments/delete/{id}',[DepartmentController::class,'destroy'])->name('admin.departments.destroy'); 
+
+       // Route For Settings
+       Route::get('/settings',[SettingController::class,'index'])->name('admin.settings.index'); 
+       Route::get('/settings/create',[SettingController::class,'create'])->name('admin.settings.create'); 
+       Route::post('/settings/store',[SettingController::class,'store'])->name('admin.settings.store'); 
+       Route::get('/settings/show/{id}',[SettingController::class,'show'])->name('admin.settings.show');
+       Route::get('/settings/edit/{id}',[SettingController::class,'edit'])->name('admin.settings.edit');
+       Route::put('/settings/update/{id}',[SettingController::class,'update'])->name('admin.settings.update');
+       Route::delete('/settings/delete/{id}',[SettingController::class,'destroy'])->name('admin.settings.destroy'); 
+
+    });
+
 });
