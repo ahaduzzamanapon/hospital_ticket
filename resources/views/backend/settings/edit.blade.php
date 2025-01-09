@@ -79,7 +79,7 @@
                                     <input type="file" class="form-control" id="logo" name="logo"
                                         onchange="previewImage(event, 'logoPreview')">
                                     @if ($setting->logo)
-                                        <img src="{{ asset('uploads/settings/' . $setting->logo) }}" id="logoPreview"
+                                        <img src="{{ asset('storage/' . $setting->logo) }}" id="logoPreview"
                                             class="image-preview" alt="Logo">
                                     @else
                                         <img id="logoPreview" class="image-preview" alt="Logo Preview">
@@ -90,7 +90,7 @@
                                     <input type="file" class="form-control" id="favicon" name="favicon"
                                         onchange="previewImage(event, 'faviconPreview')">
                                     @if ($setting->favicon)
-                                        <img src="{{ asset('uploads/settings/' . $setting->favicon) }}" id="faviconPreview"
+                                        <img src="{{ asset('storage/' . $setting->favicon) }}" id="faviconPreview"
                                             class="image-preview" alt="Favicon">
                                     @else
                                         <img id="faviconPreview" class="image-preview" alt="Favicon Preview">

@@ -34,8 +34,9 @@
                         <h4 class="header-title float-left">Settings</h4>
                         <p class="float-right mb-2">
                             @if (Auth::guard('admin')->user()->can('admin.edit'))
-                                <a class="btn btn-primary text-white" href="{{ route('admin.settings.create') }}">Create
-                                    New Setting</a>
+                                @if ($settings->count() === 0)
+                                    <a class="btn btn-primary text-white" href="{{ route('admin.settings.create') }}">Create New Setting</a>
+                                @endif
                             @endif
                         </p>
                         <div class="clearfix"></div>
@@ -124,8 +125,8 @@
 @section('scripts')
     <script>
         /*================================
-                            datatable active
-                            ==================================*/
+                                            datatable active
+                                            ==================================*/
         $(document).ready(function() {
             $('#settingsTable').DataTable({
                 responsive: true

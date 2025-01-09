@@ -18,4 +18,10 @@ class Ticket extends Model
         'payment_status',
         'transection_id'
     ];
+
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+    
+
 }

@@ -31,10 +31,10 @@
             <div class="container">
                 <div class="inner">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-12">
+                        <div class="col-lg-3 col-md-3 col-12 pb-2">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="{{route('/')}}"><img src="img/logo.png" alt="#"></a>
+                                <a href="{{route('/')}}"><img src="{{ asset('storage/' . $setting->logo) }}" alt="#" style="width: 150px;"></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->

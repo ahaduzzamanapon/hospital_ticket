@@ -9,6 +9,7 @@ use Auth;
 use App\Models\Patient;
 use App\Models\TimeSlot;
 use App\Models\Department;
+use App\Models\Setting;
 use App\Models\Ticket;
 use App\Models\TransactionsTable;
 
@@ -358,7 +359,9 @@ class BookTicket extends Controller
         $Patient = Patient::where('id', $Ticket->patient_id)->first();
         $TimeSlot = TimeSlot::where('id', $Ticket->time_slot_id)->first();
         $Department = Department::where('id', $Ticket->department_id)->first();
-        return view('site.ticket_print', compact('Ticket','Patient','TimeSlot','Department'));
+        $setting = Setting::first();
+        // dd($settings);
+        return view('site.ticket_print', compact('Ticket','Patient','TimeSlot','Department','setting'));
     }
 
     public function patient_logout(){

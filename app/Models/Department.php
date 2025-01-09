@@ -25,4 +25,9 @@ class Department extends Model
         return $this->hasMany(TimeSlot::class);
     }
 
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+    
+
 }
