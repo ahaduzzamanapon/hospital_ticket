@@ -10,41 +10,60 @@
     <section class="slider">
         <div class="hero-slider">
             <!-- Start Single Slider -->
-            <div class="single-slider" style="background-image:url('img/slider.jpg')">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="text">
-                                <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque,
-                                    faucibus libero eu, gravida quam. </p>
-                                <div class="button">
-                                    @include('site\component\book_ticket')
+            @forelse ($sliders as $slider)
+                <div class="single-slider" style="background-image:url('{{ asset('storage/' . $slider->image) }}')">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="text">
+                                    <h1>{{ $slider->title }}</h1>
+                                    <p>{!! $slider->description !!} </p>
+                                    <div class="button">
+                                        @include('site\component\book_ticket')
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @empty
+                <div class="single-slider" style="background-image:url('img/slider.jpg')">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="text">
+                                    <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
+                                        pellentesque,
+                                        faucibus libero eu, gravida quam. </p>
+                                    <div class="button">
+                                        @include('site\component\book_ticket')
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-slider" style="background-image:url('img/slider3.jpg')">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="text">
+                                    <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
+                                        pellentesque,
+                                        faucibus libero eu, gravida quam. </p>
+                                    <div class="button">
+                                        @include('site\component\book_ticket')
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Slider -->
+            @endforelse
             <!-- Start End Slider -->
-            <!-- Start Single Slider -->
-            <div class="single-slider" style="background-image:url('img/slider3.jpg')">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="text">
-                                <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque,
-                                    faucibus libero eu, gravida quam. </p>
-                                <div class="button">
-                                    @include('site\component\book_ticket')
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Slider -->
         </div>
     </section>
     <!--/ End Slider Area -->

@@ -73,10 +73,10 @@ class SliderController extends Controller
             if ($slider->image && file_exists(storage_path('app/public/' . $slider->image))) {
                 unlink(storage_path('app/public/' . $slider->image));
             }
-            $slider = $request->file('image');
-            $sliderName = 'logo_' . time() . '.' . $slider->getClientOriginalExtension();
-            $sliderPath = $slider->storeAs('uploads/logos', $sliderName, 'public');
-            $slider->image = $sliderPath;
+            $image = $request->file('image');
+            $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
+            $imagePath = $image->storeAs('uploads/sliders', $imageName, 'public');
+            $slider->image = $imagePath;
         }
         // Update other fields
         $slider->title = $request->title;
@@ -84,7 +84,7 @@ class SliderController extends Controller
 
         $slider->save();
 
-        return redirect()->route('admin.settings.index')->with('success', 'Setting updated successfully.');
+        return redirect()->route('admin.sliders.index')->with('success', 'Slider updated successfully.');
     }
 
 

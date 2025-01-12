@@ -60,7 +60,7 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-6 col-sm-12">
-                                    <label for="image">Image <span class="text-danger">(image must be less than 2048kb (jpeg,png,jpg,gif))</span></label>
+                                    <label for="image">Image <span class="text-danger">(image must be less than 2048kb (jpeg,png,jpg,gif)(width: 1600px, height: 800px))</span></label>
                                     <input type="file" class="form-control" id="image" name="image"
                                         placeholder="Enter Image">
                                 </div>
