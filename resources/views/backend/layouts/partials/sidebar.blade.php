@@ -108,11 +108,11 @@
                                      Settings
                                  </span></a>
                              <ul
-                                 class="collapse {{ Route::is('admin.settings.index') || Route::is('admin.settings.create') || Route::is('admin.settings.edit') || Route::is('admin.settings.show') ? 'in' : '' }}">
+                                 class="collapse {{ Route::is('admin.settings.index') || Route::is('admin.settings.create') || Route::is('admin.settings.edit') || Route::is('admin.settings.show') || Route::is('admin.sliders.index') || Route::is('admin.sliders.create') || Route::is('admin.sliders.edit') ? 'in' : '' }}">
 
                                  {{-- @if ($usr->can('department.index')) --}}
                                      <li
-                                         class="{{ Route::is('admin.settings.index')|| Route::is('admin.settings.create') || Route::is('admin.settings.edit') || Route::is('admin.settings.show') ? 'active' : '' }}">
+                                         class="{{ Route::is('admin.settings.index')|| Route::is('admin.settings.create') || Route::is('admin.settings.edit') || Route::is('admin.settings.show') || Route::is('admin.settings.destroy') ? 'active' : '' }}">
                                          <a href="{{ route('admin.settings.index') }}">Settings</a></li>
                                  {{-- @endif --}}
 

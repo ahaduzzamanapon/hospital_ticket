@@ -17,7 +17,7 @@
                             <div class="col-lg-7">
                                 <div class="text">
                                     <h1>{{ $slider->title }}</h1>
-                                    <p>{!! $slider->description !!} </p>
+                                    <p>{{ $slider->description }} </p>
                                     <div class="button">
                                         @include('site\component\book_ticket')
                                     </div>
