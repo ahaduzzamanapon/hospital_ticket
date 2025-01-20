@@ -146,6 +146,9 @@
         document.getElementById('printButton').addEventListener('click', function() {
             window.print();
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            window.print();
+        })
     </script>
 
 

@@ -1,4 +1,4 @@
-@extends('site\layout\main')
+@extends('site.layout.main')
 
 
 @section('title')
@@ -48,6 +48,22 @@
 
 
 @section('scripts')
+    <script>
+        $(document).ready(function() {
+            console.log(@json(session()->all()));
+            let ticket_id_for_print = "{!! session('ticket_id_for_print') !!}";
+
+            if (ticket_id_for_print && ticket_id_for_print != '') {
+                window.open('{{ route('ticket_print', ['ticket_id' => ':ticket_id']) }}'.replace(':ticket_id', ticket_id_for_print), '_blank');
+                @php
+                    session()->forget('ticket_id_for_print');
+                @endphp
+            }
+
+        })
+    </script>
+
+
     <script>
         $(document).ready(function() {
             console.log("ready!");

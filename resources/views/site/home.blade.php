@@ -1,4 +1,4 @@
-@extends('site\layout\main')
+@extends('site.layout.main')
 
 
 @section('title')
@@ -19,7 +19,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque,
                                     faucibus libero eu, gravida quam. </p>
                                 <div class="button">
-                                    @include('site\component\book_ticket')
+                                    @include('site.component.book_ticket')
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque,
                                     faucibus libero eu, gravida quam. </p>
                                 <div class="button">
-                                    @include('site\component\book_ticket')
+                                    @include('site.component.book_ticket')
                                 </div>
                             </div>
                         </div>

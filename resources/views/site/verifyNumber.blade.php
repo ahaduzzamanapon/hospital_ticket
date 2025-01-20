@@ -1,4 +1,4 @@
-@extends('site\layout\main')
+@extends('site.layout.main')
 
 
 @section('title')
@@ -96,6 +96,9 @@
                         $('#numberSection').slideUp();
                         $('#otpSection').removeClass('d-none');
                         $('.loader_verify').addClass('d-none');
+                        setTimeout(() => {
+                            $('#otp-input1').focus();
+                        }, 1000);
                     }
                 });
             })

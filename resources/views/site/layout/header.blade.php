@@ -77,7 +77,7 @@
                                     <a href="{{ route('patient_logout') }}" class="btn btn-danger btn-xm mb-2">Logout <i class="fa fa-sign-out"></i></a>
                                 </div>
                                 @else
-                                @include('site\component\book_ticket')
+                                @include('site.component.book_ticket')
                                 @endif
                             </div>
                         </div>
