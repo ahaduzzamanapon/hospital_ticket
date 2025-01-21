@@ -24,10 +24,9 @@ use App\Http\Controllers\Backend\SliderController;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('index');
-Route::get('/', 'HomeController@index')->name('/');
+Route::get('/home', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/book_ticket', 'BookTicket@index')->name('book_ticket');
+Route::get('/', 'BookTicket@index')->name('book_ticket');
 Route::post('/sendOtp', 'BookTicket@sendOtp')->name('sendOtp');
 Route::get('/resend', 'BookTicket@resend')->name('resend');
 Route::post('/verifyOtp', 'BookTicket@verifyOtp')->name('verifyOtp');

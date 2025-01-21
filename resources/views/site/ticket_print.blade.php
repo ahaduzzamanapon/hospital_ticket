@@ -86,7 +86,6 @@
                 <p><strong>Visit Date: </strong>{{ $Ticket->date->format('d-M-y') }} from {{ $TimeSlot->time_slot }}</p>
             </div>
             <div class="col-3 ">
-
                 <p>
                     <strong>Health ID:</strong>
                 <div class="barcode">
@@ -106,12 +105,10 @@
             </div>
             <div class="col-9 p-4">
                 <div class="rx-symbol">Rx</div>
-
             </div>
         </div>
         <footer>
             <div class="footer-section">
-
                 <div class="text-end">
                     <p>Signature & Seal</p>
                     <p>Name: __________________</p>
@@ -149,6 +146,9 @@
         document.getElementById('printButton').addEventListener('click', function() {
             window.print();
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            window.print();
+        })
     </script>
 
 
