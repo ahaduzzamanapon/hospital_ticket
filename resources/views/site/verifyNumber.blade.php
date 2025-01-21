@@ -7,13 +7,14 @@
 @section('styles')
     <style>
         .section-title {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .section-title h2 {
             text-align: center;
-            font-size: 60px;
+            font-size: 30px;
             font-weight: 700;
+            margin-bottom: 4px !important; 
         }
 
         .section-title p {
@@ -24,7 +25,7 @@
         }
 
         .mainHeading {
-            font-size: 24px
+            font-size: 18px
         }
 
         .otpSubheading {
@@ -32,8 +33,8 @@
         }
 
         .otp-input{
-            width: 50px !important;
-            height: 50px !important;
+            width: 30px !important;
+            height: 30px !important;
             font-size: 18px !important;
             text-align: center !important;
         }
@@ -53,6 +54,20 @@
 
         .resendNote{
             font-size: 16px;
+        }
+
+        .otp-Form {
+            /* height: 300px; */
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px; 
+            gap: 0px; 
+            position: unset; 
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
+            border-radius: 15px;
         }
 
 
@@ -90,28 +105,28 @@
 @stop
 
 @section('content')
-    <section class="verifyNumber">
+    <section class="verifyNumber mt-2">
         <div class="container">
             <div class="row">
-                <div class="section-title text-center mt-3" style="width: 100%;">
+                <div class="section-title text-center" style="width: 100%;">
                     <h2>BOOK YOUR TICKET</h2>
                 </div>
                 <div class="col-lg-12">
                     <div class="verifyNumber-card" style="justify-items: center;">
-                        <div class="otp-Form number col-md-8 pt-5 mb-4" id="numberSection">
-                            <div class="col-md-10 d-flex align-items-center justify-content-center vh-100">
+                        <div class="otp-Form number col-md-8 pt-2 mb-2" id="numberSection">
+                            <div class="col-md-10 d-flex align-items-center justify-content-center ">
                                 <div class="text-center w-100">
-                                    <p class="mainHeading text-center my-3">Enter your mobile number</p>
+                                    <p class="mainHeading text-center my-2">Enter your mobile number</p>
                                     <div class="form-group d-flex align-items-center">
-                                        <div class="previous border px-3 py-3">+88</div>
-                                        <input type="text" class="number-input-form form-control p-3 mx-2"
+                                        <div class="previous border px-3 py-2">+88</div>
+                                        <input type="text" class="number-input-form form-control p-2 mx-2"
                                             id="number-input-for-otp" value="" placeholder="XXXXXXXXX"
                                             pattern=".{11,}" title="At least 11 numbers">
                                     </div>
                                 </div>
                             </div>
-                            <button class="verifyButton w-25 mb-5" type="submit" id="getOtp"
-                                style="padding-top: 20px; padding-bottom: 20px; height: unset;">Get OTP <span
+                            <button class="verifyButton w-25 mb-2" type="submit" id="getOtp"
+                                style="padding-top: 10px; padding-bottom: 10px; height: unset;">Get OTP <span
                                     class="loader_verify d-none"><i class="fa fa-spinner fa-spin"></i></span> </button>
                         </div>
                         <div class="otp-Form otp d-none col-md-8 pt-5 mb-4" id="otpSection" style="height: unset; padding-bottom: 20px;">
