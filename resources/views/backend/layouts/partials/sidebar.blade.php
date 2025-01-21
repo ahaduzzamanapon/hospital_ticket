@@ -96,17 +96,33 @@
                              </ul>
                          </li>
                      {{-- @endif --}}
-
-                     @if ($usr->can('dashboard.view'))
+                     
+                     {{-- @if (
+                         $usr->can('departments.index') ||
+                             $usr->can('departments.create') ||
+                             $usr->can('departments.view') ||
+                             $usr->can('departments.edit') ||
+                             $usr->can('departments.delete')) --}}
                          <li>
-                             <a href="javascript:void(0)" aria-expanded="true"><i class="ti-settings"></i><span>
-                                     Settings</span></a>
-                             <ul class="collapse {{ Route::is('admin.settings.index') || Route::is('admin.settings.create') || Route::is('admin.settings.edit') || Route::is('admin.settings.show') ? 'in' : '' }}">
-                                 <li class="{{ Route::is('admin.settings.index') ? 'active' : '' }}"><a
-                                         href="{{ route('admin.settings.index') }}">Settings</a></li>
+                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-user"></i><span>
+                                     Settings
+                                 </span></a>
+                             <ul
+                                 class="collapse {{ Route::is('admin.settings.index') || Route::is('admin.settings.create') || Route::is('admin.settings.edit') || Route::is('admin.settings.show') || Route::is('admin.sliders.index') || Route::is('admin.sliders.create') || Route::is('admin.sliders.edit') ? 'in' : '' }}">
+
+                                 {{-- @if ($usr->can('department.index')) --}}
+                                     <li
+                                         class="{{ Route::is('admin.settings.index')|| Route::is('admin.settings.create') || Route::is('admin.settings.edit') || Route::is('admin.settings.show') || Route::is('admin.settings.destroy') ? 'active' : '' }}">
+                                         <a href="{{ route('admin.settings.index') }}">Settings</a></li>
+                                 {{-- @endif --}}
+
+                                 {{-- @if ($usr->can('department.create')) --}}
+                                     <li class="{{ Route::is('admin.sliders.index') || Route::is('admin.sliders.create') || Route::is('admin.sliders.edit') || Route::is('admin.sliders.show') ? 'active' : '' }}"><a
+                                             href="{{ route('admin.sliders.index') }}">Sliders</a></li>
+                                 {{-- @endif --}}
                              </ul>
                          </li>
-                     @endif
+                     {{-- @endif --}}
 
                  </ul>
              </nav>

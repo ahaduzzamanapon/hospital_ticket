@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Backend\DepartmentController;
+use App\Http\Controllers\Backend\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +96,14 @@ Route::group(['prefix' => 'admin'], function () {
        Route::get('/settings/edit/{id}',[SettingController::class,'edit'])->name('admin.settings.edit');
        Route::put('/settings/update/{id}',[SettingController::class,'update'])->name('admin.settings.update');
        Route::delete('/settings/delete/{id}',[SettingController::class,'destroy'])->name('admin.settings.destroy'); 
+
+       // Route For Time Sliders
+       Route::get('/sliders',[SliderController::class,'index'])->name('admin.sliders.index'); 
+       Route::get('/sliders/create',[SliderController::class,'create'])->name('admin.sliders.create'); 
+       Route::post('/sliders/store',[SliderController::class,'store'])->name('admin.sliders.store');
+       Route::get('/sliders/edit/{id}',[SliderController::class,'edit'])->name('admin.sliders.edit');
+       Route::put('/sliders/update/{id}',[SliderController::class,'update'])->name('admin.sliders.update');
+       Route::delete('/sliders/delete/{id}',[SliderController::class,'destroy'])->name('admin.sliders.destroy');
 
     });
 

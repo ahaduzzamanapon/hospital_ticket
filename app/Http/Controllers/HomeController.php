@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -36,6 +37,8 @@ class HomeController extends Controller
         session()->forget('number');
         session()->forget('Patient');
 
-        return view('site.home');
+        $sliders = Slider::all();
+
+        return view('site.home',compact('sliders'));
     }
 }
