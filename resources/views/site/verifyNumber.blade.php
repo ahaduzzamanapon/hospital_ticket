@@ -29,7 +29,9 @@
         }
 
         .otpSubheading {
-            font-size: 22px
+            font-size: 18px;
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
 
         .otp-input{
@@ -129,8 +131,8 @@
                                 style="padding-top: 10px; padding-bottom: 10px; height: unset;">Get OTP <span
                                     class="loader_verify d-none"><i class="fa fa-spinner fa-spin"></i></span> </button>
                         </div>
-                        <div class="otp-Form otp d-none col-md-8 pt-5 mb-4" id="otpSection" style="height: unset; padding-bottom: 20px;">
-                            <span class="mainHeading" style="font-size: 36px; margin-top: 0px">Enter OTP</span>
+                        <div class="otp-Form otp d-none col-md-8 pt-1 mb-2" id="otpSection" style="height: unset; padding-bottom: 20px;">
+                            <span class="mainHeading" style="font-size:22px; margin-top: 0px">Enter OTP</span>
                             <p class="otpSubheading">We have sent a verification code to your mobile number</p>
                             <div class="inputContainer">
                                 <input required="required" maxlength="1" type="text" class="otp-input"
@@ -142,7 +144,7 @@
                                 <input required="required" maxlength="1" type="text" class="otp-input"
                                     id="otp-input4">
                             </div>
-                            <button class="verifyButton w-25" type="button" id="verifyOtp" style="padding-top: 20px; padding-bottom: 20px; height: unset;">Verify
+                            <button class="verifyButton w-25 my-2" type="button" id="verifyOtp" style="padding-top: 10px; padding-bottom: 10px; height: unset;">Verify
                                 <span class="loader_verify d-none"><i class="fa fa-spinner fa-spin"></i></span>
                             </button>
                             <p class="resendNote">Didn't receive the code? <button class="resendBtn"
