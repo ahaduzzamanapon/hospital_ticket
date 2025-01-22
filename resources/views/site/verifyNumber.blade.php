@@ -14,7 +14,7 @@
             text-align: center;
             font-size: 30px;
             font-weight: 700;
-            margin-bottom: 4px !important; 
+            margin-bottom: 4px !important;
         }
 
         .section-title p {
@@ -65,9 +65,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 15px; 
-            gap: 0px; 
-            position: unset; 
+            padding: 15px;
+            gap: 0px;
+            position: unset;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
             border-radius: 15px;
         }
@@ -133,7 +133,7 @@
                         </div>
                         <div class="otp-Form otp d-none col-md-8 pt-1 mb-2" id="otpSection" style="height: unset; padding-bottom: 20px;">
                             <span class="mainHeading" style="font-size:22px; margin-top: 0px">Enter OTP</span>
-                            <p class="otpSubheading">We have sent a verification code to your mobile number</p>
+                            <p id="data_massage" style="margin: 13px 0px;"></p>
                             <div class="inputContainer">
                                 <input required="required" maxlength="1" type="text" class="otp-input"
                                     id="otp-input1">
@@ -187,6 +187,7 @@
                         '_token': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(response) {
+                        $('#data_massage').html(response);
                         localStorage.setItem('timeLeft', 60);
                         timer()
                         $('#numberSection').slideUp();

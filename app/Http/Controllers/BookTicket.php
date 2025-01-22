@@ -31,10 +31,32 @@ class BookTicket extends Controller
         $number = $_POST['number'];
         $otp=rand(1000,9999);
         $sms_body = "Your One Time Password (OTP) is ".$otp;
-       @send_sms($number,$sms_body);
+
+        $previous_session_otp=session('previous_session_otp');
+        if($previous_session_otp){
+            if($previous_session_otp['phone_number'] == $number){
+                $otp=$previous_session_otp['otp_code'];
+                session()->forget('previous_session_otp');
+                $data_massage="Please Enter previous OTP";
+            }else{
+                @send_sms($number,$sms_body);
+            }
+        }else{
+            @send_sms($number,$sms_body);
+        }
+
+
         session(['otp' => $otp]);
         session(['number' => $number]);
-        echo 'success';
+        session(['previous_session_otp' => [
+            'otp_code' => $otp,
+            'phone_number' => $number
+        ]]);
+        if(isset($data_massage)){
+            echo $data_massage;
+        }else{
+            echo 'Otp Sent Successfully';
+        }
     }
     public function resend(){
         session()->forget('otp');
@@ -77,15 +99,7 @@ class BookTicket extends Controller
 
     public function patientRegistration(Request $request){
         $input=$request->all();
-        // dd($input);
-        // "_token" => "5jjtgBHRAG0pV7RCb2GBecyYPBCyPZTm00k2SUvz"
-        // "patient_first_name" => "ahad"
-        // "patient_phone" => "01737155233"
-        // "date_of_birth" => "2000-01-06"
-        // "patient_age" => "25 years 0 months"
-        // "patient_gender" => "Male"
-        // "patient_blood_group" => "B+"
-        // "patient_address" => "rete
+
         $Patient= Patient::create(
             [
                 'patient_id'=>'PL'.time(),

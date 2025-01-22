@@ -18,6 +18,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
+                    <span id="data_massage"></span>
                     <div class="verifyNumber-card" style="justify-items: center;">
                         <div class="otp-Form number col-md-4" id="numberSection">
                             <span class="mainHeading">Enter your mobile number</span>
@@ -91,6 +92,7 @@
                         '_token': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(response) {
+                        $('#data_massage').html(response);
                         localStorage.setItem('timeLeft', 60);
                         timer()
                         $('#numberSection').slideUp();
