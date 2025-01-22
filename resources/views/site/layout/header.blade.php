@@ -26,6 +26,15 @@
             <div class="section-title my-1">
                 <p class="text-center text-xl text-black mt-0">E-TICKETING PLATFORM</p>
             </div>
+
+            <div class="get-quote">
+                @if(session()->has('Patient'))
+                <div class="d-flex justify-content-center" style="gap: 10px">
+                    <a href="{{ route('patient_dashboard') }}" class="btn btn-primary btn-xm mb-2">Dashboard <i class="fa fa-user"></i></a>
+                    <a href="{{ route('patient_logout') }}" class="btn btn-danger btn-xm mb-2">Logout <i class="fa fa-sign-out"></i></a>
+                </div>
+                @endif
+            </div>
             
         </div>
     </header>

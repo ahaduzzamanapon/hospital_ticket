@@ -374,7 +374,7 @@ class BookTicket extends Controller
 
     public function patient_logout(){
         session()->forget('Patient');
-        return redirect('/book_ticket');
+        return redirect('/');
     }
 
 
